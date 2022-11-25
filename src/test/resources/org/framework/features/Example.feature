@@ -6,3 +6,7 @@ Feature: An Example Feature File
   Scenario: Test Scenario
     When the user does an action
     Then the user should see the result
+
+  Scenario: Test Scenario 2
+    When the user does an action
+    Then the user should see the result
