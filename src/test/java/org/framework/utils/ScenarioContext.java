@@ -2,6 +2,9 @@ package org.framework.utils;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -43,12 +46,28 @@ public class ScenarioContext
         }
     }
 
-
     @After
-    public void tearDown()
+    public void tearDown(Scenario scenario)
     {
-        getDriver().quit();
-        initialised = false;
+        try
+        {
+            if(scenario.isFailed())
+            {
+                scenario.attach(
+                        ((TakesScreenshot) getDriver())
+                        .getScreenshotAs(OutputType.BYTES),
+                        "image/png",
+                        "screenshot");
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println("Failed to take screenshot, error: " + ex);
+        }
+        finally {
+            getDriver().quit();
+            initialised = false;
+        }
     }
 
 }
