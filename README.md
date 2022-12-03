@@ -21,7 +21,7 @@ Designed for use as a template for a new repository of tests, download and use a
  From a terminal, run:
 
 ```
- mvn clean package
+ mvn clean install
 ```
  
 Or, if you are using IntelliJ, you can run individual Senarios and Feature files from within the code by simply adding:
