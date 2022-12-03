@@ -9,6 +9,7 @@ Basic Java Selenium Framework using Cucumber, for developing automated end to en
 - Page Object Model structure, with a Base Page containing wrappers for some common Selenium functionality
 - Parallel execution of Cucumber Scenarios (using all available cores)
 - Cucumber Reports generation
+- Screenshot on failure
 
 # Usage
 
@@ -37,5 +38,4 @@ In a future update, I will add in some more functionality to the ScenarioContext
 # Coming Soon
 
 - Driver Factory Class for generating the driver and browser based on command line arguments
-- Screenshot on failure
 - Cucumber local HTML reporting
