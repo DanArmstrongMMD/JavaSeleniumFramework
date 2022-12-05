@@ -33,10 +33,11 @@ Or, if you are using IntelliJ, you can run individual Senarios and Feature files
 When running the tests in your IDE, it can be worth adding the command line argument ```-Dheadless=false``` to your cucumber run configuration
 this will allow you to run individual Scenarios and Feature files with the browser open, but keep the command line implementation
 in headless mode.
+For intelliJ, add this as your default Cucumber Java VM options.
 
 # Command line Options
 
-```-Dheadless```, enables or disables  any value not representing the string ```true``` will return ```false```, default setting is ```true```
+```-Dheadless```, enables or disables your browser's headless flag, any value except the string ```true``` will return ```false```, default setting is ```true```
 
 ```-Dbrowser```, allows for the selection of different browsers, non-accepted values will result in a default of ```chrome```.
 - options:
