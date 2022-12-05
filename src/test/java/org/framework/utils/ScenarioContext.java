@@ -6,37 +6,24 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
+
+import static org.framework.utils.DriverBuilder.buildDriver;
 
 public class ScenarioContext
 {
     private WebDriver driver;
-    private static boolean initialised = false;
+    private boolean initialised = false;
 
     @Before
-    public void setUp() {
-        setDriver();
-    }
-
-    public WebDriver getDriver()
-    {
-        return driver;
-    }
-
-    public void setDriver()
+    public void setUp()
     {
         if (!initialised)
         {
-            ChromeOptions options = new ChromeOptions();
+            this.driver = buildDriver();
 
-            this.driver = new ChromeDriver(options);
-
-            // Implicit Wait
             this.driver.manage().timeouts().implicitlyWait(Duration.ofMillis(0));
-
             this.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
             this.driver.manage().window().maximize();
 
@@ -44,6 +31,11 @@ public class ScenarioContext
 
             initialised = true;
         }
+    }
+
+    public WebDriver getDriver()
+    {
+        return driver;
     }
 
     @After

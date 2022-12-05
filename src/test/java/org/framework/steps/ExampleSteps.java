@@ -6,7 +6,8 @@ import io.cucumber.java.en.When;
 import org.framework.pageobjects.ExamplePage;
 import org.framework.utils.ScenarioContext;
 
-public class ExampleSteps {
+public class ExampleSteps
+{
 
     private ScenarioContext scenarioContext;
 

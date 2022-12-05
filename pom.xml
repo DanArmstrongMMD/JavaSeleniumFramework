@@ -27,6 +27,10 @@
             <configurationParameters>
               cucumber.junit-platform.naming-strategy=long
             </configurationParameters>
+            <systemPropertyVariables>
+              <browser>${browser}</browser>
+              <headless>${headless}</headless>
+            </systemPropertyVariables>
           </properties>
         </configuration>
       </plugin>
