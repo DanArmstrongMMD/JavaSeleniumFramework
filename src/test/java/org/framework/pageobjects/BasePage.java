@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 public class BasePage
 {
     protected WebDriver driver;
-    private FluentWait wait;
+    private FluentWait<WebDriver> wait;
 
     private final int maxAttempts = 3;
     private int attempts = 0;
@@ -20,7 +20,7 @@ public class BasePage
     protected BasePage(WebDriver driver)
     {
         this.driver = driver;
-        this.wait = new FluentWait(this.driver)
+        this.wait = new FluentWait<>(this.driver)
                 .withTimeout(Duration.ofSeconds(3))
                 .pollingEvery(Duration.ofSeconds(1));
 
