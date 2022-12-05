@@ -17,7 +17,7 @@ public class DriverBuilder
         WebDriver driver;
 
         String browserType = System.getProperty("browser", "chrome");
-        boolean headless = Boolean.parseBoolean(System.getProperty("headless", "false"));
+        boolean headless = System.getProperty("headless", "true").equals("true");
 
         switch (browserType) {
             case "chrome" ->
