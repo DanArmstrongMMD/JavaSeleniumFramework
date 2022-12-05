@@ -10,6 +10,8 @@ Basic Java Selenium Framework using Cucumber, for developing automated end to en
 - Parallel execution of Cucumber Scenarios (using all available cores)
 - Cucumber Reports generation
 - Screenshot on failure
+- Driver Builder Class for generating the driver and browser based on command line arguments
+  - Arguments: ```browser```(defaulted to "chrome"), ```headless``` (defaulted to "true")
 
 # Usage
 
@@ -28,6 +30,22 @@ Designed for use as a template for a new repository of tests, download and use a
 Or, if you are using IntelliJ, you can run individual Senarios and Feature files from within the code by simply adding:
 ```org.framework``` to your Cucumber Run Configuration, as the Cucumber Glue.
 
+When running the tests in your IDE, it can be worth adding the command line argument ```-Dheadless=false``` to your cucumber run configuration
+this will allow you to run individual Scenarios and Feature files with the browser open, but keep the command line implementation
+in headless mode.
+
+# Command line Options
+
+```-Dheadless```, enables or disables  any value not representing the string ```true``` will return ```false```, default setting is ```true```
+
+```-Dbrowser```, allows for the selection of different browsers, non-accepted values will result in a default of ```chrome```.
+- options:
+    - ```chrome```
+    - ```edge```
+    - ```firefox``` (needs testing)
+    - ```safari``` (needs testing)
+
+
 # How to Write New Tests
 
 Using this template, you can find an example feature file in the ```src/test/resources/org/framework/features``` folder, and you should write new features in here too. Step files are found in ```src/test/java/org/framework/steps```, alongside the Page Objects in the neighbouring ```pageobjects``` directory.
@@ -37,5 +55,5 @@ In a future update, I will add in some more functionality to the ScenarioContext
 
 # Coming Soon
 
-- Driver Factory Class for generating the driver and browser based on command line arguments
+
 - Cucumber local HTML reporting
