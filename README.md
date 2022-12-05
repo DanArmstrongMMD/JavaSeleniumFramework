@@ -37,7 +37,7 @@ For intelliJ, add this as your default Cucumber Java VM options.
 
 # Command line Options
 
-```-Dheadless```, enables or disables  any value not representing the string ```true``` will return ```false```, default setting is ```true```
+```-Dheadless```, enables or disables your browser's headless flag, any value except the string ```true``` will return ```false```, default setting is ```true```
 
 ```-Dbrowser```, allows for the selection of different browsers, non-accepted values will result in a default of ```chrome```.
 - options:
